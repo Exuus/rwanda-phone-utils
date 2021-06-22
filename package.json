@@ -1,8 +1,8 @@
 {
   "name": "rwanda-phone-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to validate and format rwandan phone numbers",
-  "main": "index.js",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --coverage --forceExit --detectOpenHandles  --runInBand",
     "start": "ts-node ./src/index.ts"
@@ -29,5 +29,9 @@
     "jest": "^27.0.5",
     "regenerator-runtime": "^0.13.7",
     "typescript": "^4.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliemugenzi/rwanda-phone-utils.git"
   }
 }
