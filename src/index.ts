@@ -1,10 +1,10 @@
 import constants from "./constants";
 import formatted_ from "./formatted";
 import telco_ from "./telco";
-import isValid_ from './isValid';
-import dashed_ from './dashed';
-import normalized_ from './normalized';
-import short_ from './short';
+import isValid_ from "./isValid";
+import dashed_ from "./dashed";
+import normalized_ from "./normalized";
+import short_ from "./short";
 
 interface ReturnValues {
   isValid: boolean;
@@ -78,7 +78,7 @@ const phoneUtils = (
   };
 };
 
-export const formatted = formatted_;
+export const format = formatted_;
 export const telco = telco_;
 export const isValid = isValid_;
 export const dashed = dashed_;
