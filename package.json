@@ -1,6 +1,6 @@
 {
   "name": "rwanda-phone-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A package to validate and format rwandan phone numbers",
   "main": "./src/index.ts",
   "scripts": {
