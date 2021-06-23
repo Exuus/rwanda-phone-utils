@@ -80,7 +80,7 @@ export const format = formatted_;
 export const telco = telco_;
 export const isValid = isValid_;
 export const dashed = dashed_;
-export const normalized = normalized_;
+export const normalize = normalized_;
 export const short = short_;
 
 export default phoneUtils;
