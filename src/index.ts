@@ -25,7 +25,7 @@ const phoneUtils = (
   let phone = `${phoneNumber}`;
   phone = phone.replace(/[^\d.-]/g, "");
 
-  let telco = null;
+  let telco: any = null;
 
   if (phone.length < shortLength) {
     return {
@@ -41,15 +41,13 @@ const phoneUtils = (
 
   const unformatted = `${phone}`.substring(`${phone}`.length - shortLength);
 
-  if (
-    telcos.map((telco_) => {
-      const r = unformatted.startsWith(`${telco_.value}`);
+  const phoneTelco = telcos.find((t) => unformatted.startsWith(`${t.value}`));
 
-      if (r) telco = telco_.label;
+  if (![null, undefined, ""].includes(phoneTelco?.value)) {
+    telco = phoneTelco?.label;
+  }
 
-      return r;
-    })
-  ) {
+  if (telco) {
     return {
       isValid: true,
       error: null,
