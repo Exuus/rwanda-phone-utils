@@ -2,9 +2,6 @@
 
 This is a simple npm package that validates the structure and format phone numbers from Rwanda.
 
-[Site](https://dev.co.rw/npm/rwanda-phone-utils) |
-[Docs](https://dev.co.rw/npm/rwanda-phone-utils#docs)
-
 [![NPM](https://nodei.co/npm/rwanda-phone-utils.png)](https://nodei.co/npm/rwanda-phone-utils/)
 
 ## Installation
