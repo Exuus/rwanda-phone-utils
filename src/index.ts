@@ -52,7 +52,7 @@ const phoneUtils = (
       isValid: true,
       error: null,
       normalized: `${prefix}${unformatted}`,
-      formatted: `$(${prefix}) ${unformatted.substr(0, 3)} ${unformatted.substr(
+      formatted: `+(${prefix}) ${unformatted.substr(0, 3)} ${unformatted.substr(
         3,
         3
       )} ${unformatted.substr(6, 3)}`,
