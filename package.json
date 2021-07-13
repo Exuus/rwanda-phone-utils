@@ -1,11 +1,13 @@
 {
   "name": "rwanda-phone-utils",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "description": "A package to validate and format rwandan phone numbers",
-  "main": "./src/index.ts",
+  "main": "./lib/src/index.js",
+  "types": "lib/src",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --coverage --forceExit --detectOpenHandles  --runInBand",
-    "start": "ts-node ./src/index.ts"
+    "start": "node lib/src/index.js",
+    "build": "tsc --build"
   },
   "author": "Elie Mugenzi",
   "license": "MIT",
