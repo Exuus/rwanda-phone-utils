@@ -1,21 +1,21 @@
+declare type formatType = string | null;
 interface ReturnValues {
     isValid: boolean;
     telco: string | null;
-    short: string;
-    normalized: string;
+    short: formatType;
+    normalized: formatType;
     error?: string | null;
-    dashed: string;
-    formatted: string;
+    dashed: formatType;
+    formatted: formatType;
+    unformatted: formatType;
 }
-declare const phoneUtils: (phoneNumber?: string, prefix?: string, shortLength?: number, telcos?: {
-    value: string;
-    label: string;
-}[]) => ReturnValues;
-export declare const format: (...args: any) => string;
-export declare const telco: (...args: any) => string | null;
-export declare const isValid: (...args: any) => boolean;
-export declare const dashed: (...args: any) => string;
-export declare const normalize: (...args: any) => string;
-export declare const short: (...args: any) => string;
+export declare type PhoneNumberType = (phoneNumber: string) => ReturnValues;
+declare const phoneUtils: PhoneNumberType;
+export declare const format: (phoneNumber: string) => formatType;
+export declare const telco: (phoneNumber: string) => string | null;
+export declare const isValid: (phoneNumber: string) => boolean;
+export declare const dashed: (phoneNumber: string) => formatType;
+export declare const normalize: (phoneNumber: string) => formatType;
+export declare const short: (phoneNumber: string) => formatType;
 export default phoneUtils;
 //# sourceMappingURL=index.d.ts.map
