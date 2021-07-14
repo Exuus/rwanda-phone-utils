@@ -1,3 +1,3 @@
 import phoneUtils from ".";
 
-export default (...args: any) => phoneUtils(...args).isValid;
+export default (phoneNumber: string) => phoneUtils(phoneNumber).isValid;

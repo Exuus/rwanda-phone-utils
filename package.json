@@ -1,6 +1,6 @@
 {
-  "name": "rwanda-phone-utils",
-  "version": "1.1.1",
+  "name": "@exuus/rwanda-phone-utils",
+  "version": "1.0.1",
   "description": "A package to validate and format rwandan phone numbers",
   "main": "./lib/src/index.js",
   "types": "lib/src",
@@ -34,6 +34,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eliemugenzi/rwanda-phone-utils.git"
-  }
+    "url": "git+https://github.com/exuus/rwanda-phone-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/exuus/rwanda-phone-utils/issues"
+  },
+  "homepage": "https://github.com/exuus/rwanda-phone-utils#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "keywords": [
+    "phone",
+    "mtn",
+    "airtel",
+    "format"
+  ]
 }

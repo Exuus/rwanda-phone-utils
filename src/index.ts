@@ -8,7 +8,7 @@ import short_ from "./short";
 import splitByIndex from "./helpers/splitByIndex";
 import checkPhoneValidity from "./helpers/checkPhoneValidity";
 
-type formatType =  string | null;
+type formatType = string | null;
 interface ReturnValues {
   isValid: boolean;
   telco: string | null;
@@ -18,34 +18,39 @@ interface ReturnValues {
   dashed: formatType;
   formatted: formatType;
   unformatted: formatType;
-  // format: () => 
+  // format: () =>
 }
 
-type PhoneNumberType = (phoneNumber: string )  => ReturnValues;
+export type PhoneNumberType = (phoneNumber: string) => ReturnValues;
 
-
-
-const phoneUtils: PhoneNumberType = (
-  phoneNumber
-) => {
-  const phone = phoneNumber.replace(/[^\d.-]/g, "")
-  const unformatted = `${phone}`.substring(`${phone}`.length - constants.shortLength);
-  const phoneTelco = constants?.telcos.find((t) => unformatted.startsWith(`${t.value}`));
-  const { isValid, message: errorMessage  } =  checkPhoneValidity(phone, phoneTelco);
-
+const phoneUtils: PhoneNumberType = (phoneNumber) => {
+  const phone = phoneNumber.replace(/[^\d.-]/g, "");
+  const unformatted = `${phone}`.substring(
+    `${phone}`.length - constants.shortLength
+  );
+  const phoneTelco = constants?.telcos.find((t) =>
+    unformatted.startsWith(`${t.value}`)
+  );
+  const { isValid, message: errorMessage } = checkPhoneValidity(
+    phone,
+    phoneTelco
+  );
 
   return {
     isValid,
     error: isValid ? null : errorMessage,
     normalized: isValid ? `0${unformatted}` : null,
-    formatted:  isValid ? `+(${constants.prefix}) ${splitByIndex(unformatted, 3)}` : null,
+    formatted: isValid
+      ? `+(${constants.prefix}) ${splitByIndex(unformatted, 3)}`
+      : null,
     unformatted: isValid ? `${constants.prefix}${unformatted}` : null,
-    telco: phoneTelco ? phoneTelco?.label :  null,
+    telco: phoneTelco ? phoneTelco?.label : null,
     short: isValid ? unformatted : null,
-    dashed:  isValid ? `+(${constants.prefix})-${splitByIndex(unformatted, 3, 'dash')}` : null,
-    // format: 
+    dashed: isValid
+      ? `+(${constants.prefix})-${splitByIndex(unformatted, 3, "dash")}`
+      : null,
+    // format:
   };
-
 };
 
 export const format = formatted_;
@@ -57,8 +62,7 @@ export const short = short_;
 
 export default phoneUtils;
 
-// TODO 
+// TODO
 // - configure eslint and prettier
 // - refactor format
 // - add all possible format
-
