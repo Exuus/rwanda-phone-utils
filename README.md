@@ -1,4 +1,4 @@
-# rwanda-phone-utils
+# @exuus/rwanda-phone-utils
 
 This is a simple npm package that validates the structure and format phone numbers from Rwanda.
 
