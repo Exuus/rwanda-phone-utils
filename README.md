@@ -2,46 +2,46 @@
 
 This is a simple npm package that validates the structure and format phone numbers from Rwanda.
 
-[![NPM](https://nodei.co/npm/rwanda-phone-utils.png)](https://nodei.co/npm/rwanda-phone-utils/)
+[![NPM](https://nodei.co/npm/@exuus/rwanda-phone-utils.png)](https://nodei.co/npm/@exuus/rwanda-phone-utils/)
 
 ## Installation
 
 ```cli
-npm install rwanda-phone-utils
+npm install @exuus/rwanda-phone-utils
 ```
 
 or
 
 ```cli
-yarn add rwanda-phone-utils
+yarn add @exuus/rwanda-phone-utils
 ```
 
 ## Basic Usage
 
 ```js
 // Load full build
-import phone from "rwanda-phone-utils";
+import phone from "@exuus/rwanda-phone-utils";
 
 console.log(phone("0780000000"));
 // {
 //     isValid: true,
 //     error: null,
-//     normalized: "250780000000",
+//     normalized: "0780000000",
 //     formatted: "(+250) 780 000 000",
 //     telco: "MTN",
 //     short: "780000000",
-//     dashed: "0780-000-000",
+//     dashed: "+(250)-780-000-000",
 // }
 
 console.log(phone("80000000"));
 // {
 //     isValid: false,
-//     error: "Phone number NOT valid",
+//     error: "Phone number is invalid",
 //     normalized: "80000000",
-//     formatted: "(+250) 7XX XXX XXX",
+//     formatted: null,
 //     telco: null,
-//     short: "7XXXXXXXX",
-//     dashed: "07XX-XXX-XXX"
+//     short: null,
+//     dashed: null
 // }
 ```
 
@@ -50,7 +50,7 @@ console.log(phone("80000000"));
 ## isValid()
 
 ```js
-import { isValid } from "rwanda-phone-utils";
+import { isValid } from "@exuus/rwanda-phone-utils";
 
 console.log(isValid("0780000000"));
 // true
@@ -65,7 +65,7 @@ phone("0780000000").isValid;
 ## format()
 
 ```js
-import { format } from "rwanda-phone-utils";
+import { format } from "@exuus/rwanda-phone-utils";
 
 console.log(format("0780000000"));
 // "(+250) 780 000 000"
@@ -80,10 +80,10 @@ phone("0780000000").formatted;
 ## normalize()
 
 ```js
-import { normalize } from "rwanda-phone-utils";
+import { normalize } from "@exuus/rwanda-phone-utils";
 
 console.log(normalize("0780000000"));
-// "250780000000"
+// "0780000000"
 ```
 
 Or
@@ -95,7 +95,7 @@ phone("0780000000").normalized;
 ## short()
 
 ```js
-import { short } from "rwanda-phone-utils";
+import { short } from "@exuus/rwanda-phone-utils";
 
 console.log(short("0780000000"));
 // "780000000"
@@ -110,7 +110,7 @@ phone("0780000000").short;
 ## telco()
 
 ```js
-import { telco } from "rwanda-phone-utils";
+import { telco } from "@exuus/rwanda-phone-utils";
 
 console.log(telco("0780000000"));
 // "MTN"
@@ -125,10 +125,10 @@ phone("0780000000").telco;
 ## telco()
 
 ```js
-import { dashed } from "rwanda-phone-utils";
+import { dashed } from "@exuus/rwanda-phone-utils";
 
 console.log(dashed("0780000000"));
-// "0780-000-000"
+// "+(250)-780-000-000"
 ```
 
 Or
@@ -140,17 +140,17 @@ phone("0780000000").dashed;
 ## phone()
 
 ```js
-import phone from "rwanda-phone-utils";
+import phone from "@exuus/rwanda-phone-utils";
 
 console.log(phone("0780000000"));
 // {
 //     isValid: true,
 //     error: null,
-//     normalized: "250780000000",
+//     normalized: "0780000000",
 //     formatted: "(+250) 780 000 000",
 //     telco: "MTN",
 //     short: "780000000",
-//     dashed: "0780-000-000"
+//     dashed: "+(250)-780-000-000"
 // }
 ```
 
