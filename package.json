@@ -1,6 +1,6 @@
 {
   "name": "@exuus/rwanda-phone-utils",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A package to validate and format rwandan phone numbers",
   "main": "./lib/src/index.js",
   "types": "lib/src",
