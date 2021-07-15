@@ -39,7 +39,7 @@ const phoneUtils: PhoneNumberType = (phoneNumber) => {
   return {
     isValid,
     error: isValid ? null : errorMessage,
-    normalized: isValid ? `0${unformatted}` : null,
+    normalized: isValid ? `250${unformatted}` : null,
     formatted: isValid
       ? `+(${constants.prefix}) ${splitByIndex(unformatted, 3)}`
       : null,

@@ -8,7 +8,7 @@ describe("Phone utils", () => {
       const p = telco("250795844487");
       expect(p).toBe("MTN");
     });
-  })
+  });
 
   describe("Check the phone numbers format", () => {
     it("Should have a dashed format", () => {
@@ -23,7 +23,7 @@ describe("Phone utils", () => {
 
     it("Should have a normalized format", () => {
       const p = phoneUtils("250795844487");
-      expect(p.normalized).toBe("0795844487");
+      expect(p.normalized).toBe("250795844487");
     });
 
     it("Should have a unformatted format", () => {
@@ -31,7 +31,7 @@ describe("Phone utils", () => {
       expect(p.unformatted).toBe("250795844487");
     });
 
-    it("Should have a space format", () => {
+    it("Should have a short format", () => {
       const p = phoneUtils("+250795844487");
       expect(p.short).toBe("795844487");
     });
