@@ -21,6 +21,6 @@ export default {
 
 export const TelcoInitials = ["78", "79", "72",  "73"] as const;
 
-export type  formatTypes = "dashed" | "normalized" | "short" | "formatted" | "dashed-short" |  "dashed-normalized" | "dashed-unformatted" | "space"  |  "space-short" |  "space-normalized"  | "space-unformatted"
+export type  formatTypes = "dashed" | "normalized" | "short" | "dashed-short" |  "dashed-normalized" | "dashed-unformatted" | "space"  |  "space-short" |  "space-normalized"  | "space-unformatted"
 
 // TODO: add type for this object
