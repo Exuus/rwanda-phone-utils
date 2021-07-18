@@ -1,10 +1,5 @@
-import constants from "./constants";
-import formatted_ from "./formatted";
-import telco_ from "./telco";
-import isValid_ from "./isValid";
-import dashed_ from "./dashed";
-import normalized_ from "./normalized";
-import short_ from "./short";
+import constants, { formatTypes } from "./constants";
+import formatted_ from "./format";
 import splitByIndex from "./helpers/splitByIndex";
 import checkPhoneValidity from "./helpers/checkPhoneValidity";
 
@@ -18,7 +13,7 @@ interface ReturnValues {
   dashed: formatType;
   formatted: formatType;
   unformatted: formatType;
-  // format: () =>
+  format: (shape?: formatTypes) => string;
 }
 
 export type PhoneNumberType = (phoneNumber: string) => ReturnValues;
@@ -43,22 +38,17 @@ const phoneUtils: PhoneNumberType = (phoneNumber) => {
     formatted: isValid
       ? `+(${constants.prefix}) ${splitByIndex(unformatted, 3)}`
       : null,
-    unformatted: isValid ? `${constants.prefix}${unformatted}` : null,
+    unformatted: isValid ? `${constants.prefix}${unformatted}` : phoneNumber,
     telco: phoneTelco ? phoneTelco?.label : null,
     short: isValid ? unformatted : null,
     dashed: isValid
       ? `+(${constants.prefix})-${splitByIndex(unformatted, 3, "dash")}`
       : null,
-    // format:
+    format(shape) {
+      return this.isValid ? formatted_(unformatted, shape) : constants.errors.invalid
+    },
   };
 };
-
-export const format = formatted_;
-export const telco = telco_;
-export const isValid = isValid_;
-export const dashed = dashed_;
-export const normalize = normalized_;
-export const short = short_;
 
 export default phoneUtils;
 
