@@ -31,6 +31,9 @@ export default (unformatted: string, formatShape?: formatTypes): string => {
   
     case "normalized":
         return `0${unformatted}`
+        
+    case "unformatted":
+        return `250${unformatted}`
 
     case "short":
         return unformatted

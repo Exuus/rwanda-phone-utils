@@ -66,6 +66,7 @@ List of all available formats
 |------------------------|----------------------|
 | `short`                | 780000000            |
 | `normalized`           | 0780000000           |
+| `unformatted`          | 250780000000         |
 | `dashed`               | +(250)-795-844-487   |
 | `dashed-short`         | 795-844-487          |
 | `dashed-normalized`    | 0795-844-487         |
@@ -85,7 +86,7 @@ phoneUtils("+1780000000").format("short")
 
 # Contributors
 
-| [<span><img src="https://github.com/eliemugenzi.png" width="100px;"><div><sub><b>Elie Mugenzi</b></sub></div></span>](https://github.com/eliemugenzi) | [<span><img src="https://github.com/dusmel.png" width="100px;"><div><sub><b>Hadad <img src="https://img.icons8.com/ios/13/000000/twitter--v1.png"/></b></sub></div></span>](https://twitter.com/hadad__) |
+| [<span><img src="https://github.com/eliemugenzi.png" width="100px;"><div><sub><b>Elie Mugenzi</b></sub></div></span>](https://github.com/eliemugenzi) | [<span><img src="https://github.com/dusmel.png" width="100px;"><div><sub><b>Hadad <img src="https://img.icons8.com/office/12/000000/twitter.png"/></b></sub></div></span>](https://twitter.com/hadad__) |
 | ------------------------ | ------------------------------ |
 
 
