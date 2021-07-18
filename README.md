@@ -1,6 +1,6 @@
 # @exuus/rwanda-phone-utils
 
-This is a simple npm package that validates the structure and format phone numbers from Rwanda.
+This is a simple npm package that validates and format the structure of phone numbers from Rwanda.
 
 [![NPM](https://nodei.co/npm/@exuus/rwanda-phone-utils.png)](https://nodei.co/npm/@exuus/rwanda-phone-utils/)
 
@@ -20,9 +20,9 @@ yarn add @exuus/rwanda-phone-utils
 
 ```js
 // Load full build
-import phone from "@exuus/rwanda-phone-utils";
+import phoneUtils from "@exuus/rwanda-phone-utils";
 
-console.log(phone("0780000000"));
+phoneUtils("0780000000")
 // {
 //     isValid: true,
 //     error: null,
@@ -31,133 +31,63 @@ console.log(phone("0780000000"));
 //     telco: "MTN",
 //     short: "780000000",
 //     dashed: "+(250)-780-000-000",
+//     format: function
 // }
 
-console.log(phone("80000000"));
+phoneUtils("80000000");
 // {
 //     isValid: false,
 //     error: "Phone number is invalid",
-//     normalized: "80000000",
+//     normalized: null,
 //     formatted: null,
+//     unformatted: 80000000,
 //     telco: null,
 //     short: null,
 //     dashed: null
+//     format: function
 // }
 ```
 
-# Methods
+# Format
+Get the formatted phone number according to the option (shape) passed in.
 
-## isValid()
+```js 
+phoneUtils("+250780000000").format() // default
+// 780000000
 
-```js
-import { isValid } from "@exuus/rwanda-phone-utils";
-
-console.log(isValid("0780000000"));
-// true
+phoneUtils("+250788000000").format("dashed-normalized")
+// 0780-000-000
 ```
 
-Or
 
+List of all available formats
+
+| **Format**             | **Output**           |
+|------------------------|----------------------|
+| `short`                | 780000000            |
+| `normalized`           | 0780000000           |
+| `dashed`               | +(250)-795-844-487   |
+| `dashed-short`         | 795-844-487          |
+| `dashed-normalized`    | 0795-844-487         |
+| `dashed-unformatted`   | 250-795-844-487      |
+| `space`                | +(250) 795 844 487   |
+| `space-short`          | 795 844 487          |
+| `space-normalized`     | 0795 844 487         |
+| `space-unformatted`    | 250 795 844 487      |
+
+
+Formatting an invalid number will give your an error message 
 ```js
-phone("0780000000").isValid;
+phoneUtils("+1780000000").format("short")
+// Phone number is invalid
 ```
 
-## format()
-
-```js
-import { format } from "@exuus/rwanda-phone-utils";
-
-console.log(format("0780000000"));
-// "(+250) 780 000 000"
-```
-
-Or
-
-```js
-phone("0780000000").formatted;
-```
-
-## normalize()
-
-```js
-import { normalize } from "@exuus/rwanda-phone-utils";
-
-console.log(normalize("0780000000"));
-// "0780000000"
-```
-
-Or
-
-```js
-phone("0780000000").normalized;
-```
-
-## short()
-
-```js
-import { short } from "@exuus/rwanda-phone-utils";
-
-console.log(short("0780000000"));
-// "780000000"
-```
-
-Or
-
-```js
-phone("0780000000").short;
-```
-
-## telco()
-
-```js
-import { telco } from "@exuus/rwanda-phone-utils";
-
-console.log(telco("0780000000"));
-// "MTN"
-```
-
-Or
-
-```js
-phone("0780000000").telco;
-```
-
-## telco()
-
-```js
-import { dashed } from "@exuus/rwanda-phone-utils";
-
-console.log(dashed("0780000000"));
-// "+(250)-780-000-000"
-```
-
-Or
-
-```js
-phone("0780000000").dashed;
-```
-
-## phone()
-
-```js
-import phone from "@exuus/rwanda-phone-utils";
-
-console.log(phone("0780000000"));
-// {
-//     isValid: true,
-//     error: null,
-//     normalized: "0780000000",
-//     formatted: "(+250) 780 000 000",
-//     telco: "MTN",
-//     short: "780000000",
-//     dashed: "+(250)-780-000-000"
-// }
-```
 
 # Contributors
 
-| [<img src="https://github.com/eliemugenzi.png" width="100px;"><br><sub><b>Elie Mugenzi</b></sub>](https://github.com/eliemugenzi) |
-| :-------------------------------------------------------------------------------------------------------------------------------: |
+| [<span><img src="https://github.com/eliemugenzi.png" width="100px;"><div><sub><b>Elie Mugenzi</b></sub></div></span>](https://github.com/eliemugenzi) | [<span><img src="https://github.com/dusmel.png" width="100px;"><div><sub><b>Hadad <img src="https://img.icons8.com/ios/13/000000/twitter--v1.png"/></b></sub></div></span>](https://twitter.com/hadad__) |
+| ------------------------ | ------------------------------ |
+
 
 ## Licence
 

@@ -38,7 +38,7 @@ const phoneUtils: PhoneNumberType = (phoneNumber) => {
     formatted: isValid
       ? `+(${constants.prefix}) ${splitByIndex(unformatted, 3)}`
       : null,
-    unformatted: isValid ? `${constants.prefix}${unformatted}` : null,
+    unformatted: isValid ? `${constants.prefix}${unformatted}` : phoneNumber,
     telco: phoneTelco ? phoneTelco?.label : null,
     short: isValid ? unformatted : null,
     dashed: isValid
