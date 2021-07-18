@@ -13,7 +13,7 @@ interface ReturnValues {
   dashed: formatType;
   formatted: formatType;
   unformatted: formatType;
-  format: (shape: formatTypes) => string;
+  format: (shape?: formatTypes) => string;
 }
 
 export type PhoneNumberType = (phoneNumber: string) => ReturnValues;

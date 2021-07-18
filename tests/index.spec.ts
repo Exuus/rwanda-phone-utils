@@ -52,6 +52,11 @@ describe("Phone utils", () => {
   });
 
   describe("Check for format function", () => {
+    it("Should return default (short) if shape not provided", () => {
+      const p = phoneUtils("250795844487").format();
+      expect(p).toBe("795844487");
+    });
+    
     it("Should have a normalized format", () => {
       const p = phoneUtils("250795844487").format("normalized");
       expect(p).toBe("0795844487");
@@ -85,6 +90,7 @@ describe("Phone utils", () => {
     });
 
     describe('space format', () => {
+
       it("Should have a space format", () => {
         const p = phoneUtils("250795844487").format("space");
         expect(p).toBe("+(250) 795 844 487");

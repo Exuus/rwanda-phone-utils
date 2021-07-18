@@ -1,7 +1,9 @@
 import constants, { formatTypes } from "./constants";
 import splitByIndex from "./helpers/splitByIndex";
 
-export default (unformatted: string, formatShape: formatTypes): string => {
+export default (unformatted: string, formatShape?: formatTypes): string => {
+  if (!formatShape) return unformatted;
+
   switch (formatShape) {
     case "dashed":
         return `+(${constants.prefix})-${splitByIndex(unformatted, 3, "dash")}`
