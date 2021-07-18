@@ -14,5 +14,5 @@ declare const _default: {
 };
 export default _default;
 export declare const TelcoInitials: readonly ["78", "79", "72", "73"];
-export declare type formatTypes = "dashed" | "normalized" | "short" | "formatted" | "dashed-short" | "dashed-normalized" | "dashed-unformatted" | "space" | "space-short" | "space-normalized" | "space-unformatted";
+export declare type formatTypes = "dashed" | "normalized" | "short" | "unformatted" | "dashed-short" | "dashed-normalized" | "dashed-unformatted" | "space" | "space-short" | "space-normalized" | "space-unformatted";
 //# sourceMappingURL=index.d.ts.map
