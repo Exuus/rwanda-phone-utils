@@ -56,6 +56,11 @@ describe("Phone utils", () => {
       const p = phoneUtils("250795844487").format();
       expect(p).toBe("795844487");
     });
+
+    it("Should have an unformatted format", () => {
+      const p = phoneUtils("250795844487").format("unformatted");
+      expect(p).toBe("250795844487");
+    });
     
     it("Should have a normalized format", () => {
       const p = phoneUtils("250795844487").format("normalized");
