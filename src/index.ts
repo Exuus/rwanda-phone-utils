@@ -19,11 +19,11 @@ interface ReturnValues {
 export type PhoneNumberType = (phoneNumber: string) => ReturnValues;
 
 const phoneUtils: PhoneNumberType = (phoneNumber) => {
-  const phone = phoneNumber.replace(/[^\d.-]/g, "");
-  const unformatted = `${phone}`.substring(
+  const phone = phoneNumber?.replace(/[^\d.-]/g, "");
+  const unformatted = `${phone}`?.substring(
     `${phone}`.length - constants.shortLength
   );
-  const phoneTelco = constants?.telcos.find((t) =>
+  const phoneTelco = constants?.telcos?.find((t) =>
     unformatted.startsWith(`${t.value}`)
   );
   const { isValid, message: errorMessage } = checkPhoneValidity(
