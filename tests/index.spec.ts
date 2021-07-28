@@ -10,6 +10,33 @@ describe("Phone utils", () => {
     });
   });
 
+  describe("Check validity of badly formated input", () => {
+    const validPhones = [
+      "+(250) 785-323-292",
+      "+250 785 323 292",
+      "0 7 8 5 3 2 3 2 9 2",
+      "2507-85-3232-92",
+    ];
+    it("Should return valid for badly formated phone numbers", () => {
+      validPhones.forEach((phone) => {
+        expect(phoneUtils(phone).isValid).toBe(true);
+      });
+    });
+  });
+
+  describe("Check the phone numbers country code", () => {
+    it("Should fail when passing wrong country code", () => {
+      const wrongCodes = [
+        "+(251) 785-323-292",
+        "+256 785 323 292",
+        "2917-85-3232-92",
+      ];
+      wrongCodes.forEach((phone) => {
+        expect(phoneUtils(phone).isValid).toBe(false);
+      });
+    });
+  });
+
   describe("Check the phone numbers format", () => {
     it("Should have a dashed format", () => {
       const p = phoneUtils("250795844487");
@@ -49,6 +76,11 @@ describe("Phone utils", () => {
       expect(p.isValid).toBeFalsy();
       expect(p.error).toBe(constants.errors.short);
     });
+
+    it("Should be invalid when adding letters", () => {
+      const p = phoneUtils("25078532329a");
+      expect(p.isValid).toBeFalsy();
+    });
   });
 
   describe("Check for format function", () => {
@@ -61,7 +93,7 @@ describe("Phone utils", () => {
       const p = phoneUtils("250795844487").format("unformatted");
       expect(p).toBe("250795844487");
     });
-    
+
     it("Should have a normalized format", () => {
       const p = phoneUtils("250795844487").format("normalized");
       expect(p).toBe("0795844487");
@@ -94,13 +126,12 @@ describe("Phone utils", () => {
       });
     });
 
-    describe('space format', () => {
-
+    describe("space format", () => {
       it("Should have a space format", () => {
         const p = phoneUtils("250795844487").format("space");
         expect(p).toBe("+(250) 795 844 487");
       });
-      
+
       it("Should have a space-short format", () => {
         const p = phoneUtils("250795844487").format("space-short");
         expect(p).toBe("795 844 487");
@@ -115,7 +146,6 @@ describe("Phone utils", () => {
         const p = phoneUtils("250795844487").format("space-unformatted");
         expect(p).toBe("250 795 844 487");
       });
-    })
-
+    });
   });
 });
