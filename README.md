@@ -97,3 +97,5 @@ MIT
 ## Author
 
 Elie Mugenzi
+
+![test](https://github.com/Exuus/rwanda-phone-utils/actions/workflows/test.yml/badge.svg) ![Code Coverage](https://codecov.io/gh/Exuus/rwanda-phone-utils/branch/main/graph/badge.svg)
