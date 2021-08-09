@@ -1,5 +1,7 @@
 # @exuus/rwanda-phone-utils
 
+![test](https://github.com/Exuus/rwanda-phone-utils/actions/workflows/test.yml/badge.svg) ![Code Coverage](https://codecov.io/gh/Exuus/rwanda-phone-utils/branch/main/graph/badge.svg)
+
 This is a simple npm package that validates and format the structure of phone numbers from Rwanda.
 
 [![NPM](https://nodei.co/npm/@exuus/rwanda-phone-utils.png)](https://nodei.co/npm/@exuus/rwanda-phone-utils/)
@@ -97,5 +99,3 @@ MIT
 ## Author
 
 Elie Mugenzi
-
-![test](https://github.com/Exuus/rwanda-phone-utils/actions/workflows/test.yml/badge.svg) ![Code Coverage](https://codecov.io/gh/Exuus/rwanda-phone-utils/branch/main/graph/badge.svg)
