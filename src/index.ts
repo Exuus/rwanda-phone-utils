@@ -19,7 +19,7 @@ interface ReturnValues {
 export type PhoneNumberType = (phoneNumber: string) => ReturnValues;
 
 const phoneUtils: PhoneNumberType = (phoneNumber) => {
-  const phone = phoneNumber?.replace(/[^\d.-]/g, "");
+  const phone = phoneNumber?.replace(/[^\d]/g, "");
   const unformatted = `${phone}`?.substring(
     `${phone}`.length - constants.shortLength
   );
@@ -45,7 +45,9 @@ const phoneUtils: PhoneNumberType = (phoneNumber) => {
       ? `+(${constants.prefix})-${splitByIndex(unformatted, 3, "dash")}`
       : null,
     format(shape) {
-      return this.isValid ? formatted_(unformatted, shape) : constants.errors.invalid
+      return this.isValid
+        ? formatted_(unformatted, shape)
+        : constants.errors.invalid;
     },
   };
 };
